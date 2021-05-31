@@ -27,7 +27,13 @@ kubectl apply -f service/loadbalancer-aws-elb.yaml
 
 cd ../..
 
-kubectl apply -f files/4ingress/nginx-ingress-install-edited.yaml
+export randomnumber=$(openssl rand -hex 4)
+
+
+cat files/4ingress/nginx-ingress-install-edited.yaml | sed "s/{{randomnumber}}/$randomnumber/g" | kubectl apply -f -
+
 echo "Install finished"
+touch random_number_is_$randomnumber
+echo "Save this random number for later $randomnumber"
 
 
