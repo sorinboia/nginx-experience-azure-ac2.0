@@ -23,7 +23,7 @@ kubectl apply -f common/global-configuration.yaml
 kubectl apply -f common/crds/appprotect.f5.com_aplogconfs.yaml
 kubectl apply -f common/crds/appprotect.f5.com_appolicies.yaml
 kubectl apply -f common/crds/appprotect.f5.com_apusersigs.yaml
-kubectl apply -f service/loadbalancer-aws-elb.yaml
+
 
 cd ../..
 
