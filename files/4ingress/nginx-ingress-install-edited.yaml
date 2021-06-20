@@ -73,8 +73,6 @@ metadata:
   name: nginx-config
   namespace: nginx-ingress
 data:
-  proxy-protocol: "True"
-  real-ip-header: "proxy_protocol"
   set-real-ip-from: "0.0.0.0/0"
   stream-snippets: |
     resolver 172.20.0.10 valid=5s;
@@ -83,7 +81,7 @@ data:
         zone_sync;
         zone_sync_server nginx-ingress-headless.nginx-ingress.svc.cluster.local:12345 resolve;
     }
-  resolver-addresses: 172.20.0.10
+  resolver-addresses: 10.0.0.10
   resolver-valid: 5s
   opentracing: "True"
   opentracing-tracer: "/usr/local/lib/libzipkin_opentracing_plugin.so"
