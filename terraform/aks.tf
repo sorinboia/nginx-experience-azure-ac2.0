@@ -3,7 +3,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   location            = var.location
   resource_group_name = azurerm_resource_group.az_resourcegroup.name
   dns_prefix          = "${var.dns_prefix}-${random_id.random-string.dec}"
-  kubernetes_version  = "1.21.13"
+  kubernetes_version  = "1.21.9"
 
   network_profile {
     network_plugin = "azure"
