@@ -23,7 +23,7 @@ resource "azurerm_virtual_machine" "example" {
   location              = var.controller_location
   resource_group_name   = azurerm_resource_group.az_resourcegroup.name
   network_interface_ids = [azurerm_network_interface.controller_vm1nic.id]
-  vm_size               = "Standard_D8_v3"
+  vm_size               = "standard_E8a_v4"
 
   delete_os_disk_on_termination = true
   delete_data_disks_on_termination = true
