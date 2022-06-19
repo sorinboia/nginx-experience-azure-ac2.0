@@ -30,6 +30,8 @@ cd ../..
 export randomnumber=$(openssl rand -hex 4)
 echo "export nginx_ingress=arcadia-$randomnumber.uksouth.cloudapp.azure.com" >> ~/.bashrc
 echo "export dashboard_nginx_ingress=dashboard-$randomnumber.uksouth.cloudapp.azure.com" >> ~/.bashrc
+echo "export randomnumber=$randomnumber" >> ~/.bashrc
+
 source ~/.bashrc
 
 cat files/4ingress/nginx-ingress-install-edited.yaml | sed "s/{{randomnumber}}/$randomnumber/g" | kubectl apply -f -
