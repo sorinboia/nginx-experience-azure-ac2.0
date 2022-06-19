@@ -6,7 +6,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 
   network_profile {
     network_plugin = "azure"
-    load_balancer_sku = "Basic"
+    load_balancer_sku = "basic"
   }
 
   linux_profile {
