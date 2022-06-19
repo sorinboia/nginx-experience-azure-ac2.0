@@ -28,12 +28,15 @@ kubectl apply -f common/crds/appprotect.f5.com_apusersigs.yaml
 cd ../..
 
 export randomnumber=$(openssl rand -hex 4)
-
+echo "export nginx_ingress=arcadia-$randomnumber.westeurope.cloudapp.azure.com" >> ~/.bashrc
+echo "export dashboard_nginx_ingress=dashboard-$randomnumber.westeurope.cloudapp.azure.com" >> ~/.bashrc
+source ~/.bashrc
 
 cat files/4ingress/nginx-ingress-install-edited.yaml | sed "s/{{randomnumber}}/$randomnumber/g" | kubectl apply -f -
 
 echo "Install finished"
 touch random_number_is_$randomnumber
 echo "Save this random number for later $randomnumber"
+echo "Application domain $nginx_ingress"
 
 
