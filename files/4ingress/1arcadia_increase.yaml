@@ -101,7 +101,7 @@ spec:
     spec:
       containers:
         - name: arcadia-users
-          image: /arcadia-users:v0.1
+          image: sorinboiaf5/arcadia-users:v0.1
           imagePullPolicy: Always
           ports:
             - containerPort: 80
