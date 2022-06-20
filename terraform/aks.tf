@@ -4,7 +4,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   resource_group_name = azurerm_resource_group.az_resourcegroup.name
   dns_prefix          = "${var.dns_prefix}-${random_id.random-string.dec}"
   kubernetes_version  = "1.21.9"
-  max_pods            = 200
+  
 
   network_profile {
     network_plugin = "azure"
@@ -23,6 +23,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     name            = "agentpool"
     node_count      = var.agent_count
     vm_size         = "standard_E4a_v4"
+    max_pods        = 200
   }
 
   #service_principal {
