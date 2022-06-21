@@ -22,7 +22,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
   default_node_pool {
     name            = "agentpool"
     node_count      = var.agent_count
-    vm_size         = "standard_E4a_v4"
+    vm_size         = "standard_E8a_v4"
     max_pods        = 200
   }
 
